@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: white;
+    background-attachment: white;
     font-family: 'Times New Roman', Times, serif;
 
 padding-bottom: 30px;
@@ -66,6 +66,20 @@ padding-bottom: 30px;
 .pg2:hover {
   background: #030303;
   color: #fff;
+}  
+  .actual {
+  color: #0c0a0a;
+  border: 1px solid #060505;
+  padding: 10px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8%;
+  
+}
+.actual:hover {
+  background: #000000;
+  color: #ffffff;
 }  
   
 
@@ -351,5 +365,7 @@ font-family:'Times New Roman', Times, serif ;
   margin-top:3.5% ;
   margin-left: 50%;
 }
+
+
 
 
