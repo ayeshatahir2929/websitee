@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJ9EWH4VxHX97NSJmFQ6FJycWswql6ZJsvhKbQApaRmchHLtgi">
+
+    <title>Carits — Our Work</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BODY ===== */
+        body {
+            min-height: 100vh;
+            background: #0a0a0a;
+            background-image: 
+                radial-gradient(ellipse at 0% 0%, rgba(255, 107, 0, 0.06), transparent 50%),
+                radial-gradient(ellipse at 100% 0%, rgba(255, 107, 0, 0.06), transparent 50%),
+                radial-gradient(ellipse at 0% 100%, rgba(255, 107, 0, 0.06), transparent 50%),
+                radial-gradient(ellipse at 100% 100%, rgba(255, 107, 0, 0.06), transparent 50%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 107, 0, 0.06);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ff6b00;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b00;
+        }
+
+        .instagram-btn {
+            background: #ff6b00;
+            color: #0a0a0a !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .instagram-btn:hover {
+            background: #fff;
+            color: #0a0a0a !important;
+            transform: scale(1.05);
+        }
+
+        /* ===== PAGE TITLE ===== */
+        .page-title {
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .page-title h1 {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .page-title h1 span {
+            color: #ff6b00;
+        }
+
+        .page-title p {
+            color: #aaa;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 12px auto 0;
+        }
+
+        /* ===== VIDEO GALLERY ===== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin: 30px 0 60px;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            border-color: rgba(255, 107, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-card video,
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #111;
+            border: none;
+            display: block;
+        }
+
+        .video-card .info {
+            padding: 20px 24px 24px;
+        }
+
+        .video-card .info h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .video-card .info .views {
+            color: #ff6b00;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .video-card .info .desc {
+            color: #888;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .video-card .info .client-tag {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.1);
+            color: #ff6b00;
+            font-size: 12px;
+            padding: 2px 14px;
+            border-radius: 50px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* ===== INTRO TEXT ===== */
+        .intro-text {
+            text-align: center;
+            padding: 20px 0 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 40px;
+        }
+
+        .intro-text h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .intro-text h2 span {
+            color: #ff6b00;
+        }
+
+        .intro-text p {
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 17px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            padding: 40px 0 30px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .faq-section h2 span {
+            color: #ff6b00;
+        }
+
+        .faq-section .sub {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 17px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px 0;
+            cursor: pointer;
+        }
+
+        .faq-item .question {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        .faq-item .question .arrow {
+            color: #ff6b00;
+            transition: transform 0.3s ease;
+            font-size: 20px;
+        }
+
+        .faq-item.active .question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            color: #aaa;
+            padding-right: 20px;
+        }
+
+        .faq-item.active .answer {
+            max-height: 200px;
+            padding-top: 12px;
+        }
+
+        /* ===== WHY WE EXIST ===== */
+        .why-exist {
+            background: rgba(255, 107, 0, 0.03);
+            border: 1px solid rgba(255, 107, 0, 0.08);
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin: 50px 0 60px;
+            text-align: center;
+        }
+
+        .why-exist h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .why-exist h2 span {
+            color: #ff6b00;
+        }
+
+        .why-exist p {
+            color: #aaa;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        /* ===== BACK BUTTON ===== */
+        .back-link {
+            display: inline-block;
+            color: #ff6b00;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0 40px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            transform: translateX(-4px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            color: #444;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 32px;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-exist {
+                padding: 30px 20px;
+            }
+            .faq-section h2 {
+                font-size: 28px;
+            }
+            .logo {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header>
+            <div class="header-inner">
+                <div class="logo"><a href="index.html"><span>CARITS</span></a></div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="https://www.instagram.com/carits.pk?stkn=ajFvYXR1Y2gxbDRi" target="_blank" class="instagram-btn">📷 Instagram</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ===== PAGE TITLE ===== -->
+        <div class="page-title">
+            <h1>Our <span>Work</span></h1>
+            <p>Real edits for real people. Every project is crafted with care.</p>
+        </div>
+
+        <!-- ===== INTRO TEXT ===== -->
+        <div class="intro-text">
+            <h2>Built for <span>Creators</span></h2>
+            <p>
+                Whether you're just starting out or already have a following — 
+                we make your content look professional. No music, no gimmicks, 
+                just clean edits that keep people watching.
+            </p>
+        </div>
+
+        <!-- ===== VIDEO GALLERY ===== -->
+        <div class="video-grid">
+
+            <!-- VIDEO 1 -->
+            <div class="video-card">
+                <!-- Replace src with actual video file or YouTube embed -->
+                <video src="video1.mp4" controls poster="https://via.placeholder.com/600x338/111/ff6b00?text=Video+1"></video>
+                <div class="info">
+                    <h3>SAMPLE</h3>
+                    <span class="views">📈</span>
+                    <p class="desc">Haircut edit that went viral in 48 hours.</p>
+                    
+                </div>
+            </div>
+
+            <!-- VIDEO 2 -->
+            <div class="video-card">
+                <video src="video2.mp4" controls poster="https://via.placeholder.com/600x338/111/ff6b00?text=Video+2"></video>
+                <div class="info">
+                    <h3>SAMPLE</h3>
+                    <span class="views">📈</span>
+                    <p class="desc">Reality check, drove real engagement.</p>
+                </div>
+            </div>
+
+            <!-- VIDEO 3 -->
+            <div class="video-card">
+                <video src="video3.mp4" controls poster="https://via.placeholder.com/600x338/111/ff6b00?text=Video+3"></video>
+                <div class="info">
+                    <h3>SAMPLE</h3>
+                    <span class="views">📈</span>
+                    <p class="desc">Content idea that reached thousands.</p>
+    
+                </div>
+            </div>
+
+    
+ <div class="video-card">
+                <!-- Replace src with actual video file or YouTube embed -->
+                <video src="video4.mp4" controls poster="https://via.placeholder.com/600x338/111/ff6b00?text=Video+1"></video>
+                <div class="info">
+                    <h3>SAMPLE</h3>
+                    <span class="views">📈</span>
+                    <p class="desc">Content idea.</p>
+                    
+                </div>
+            </div>
+
+            <!-- VIDEO 5 -->
+            <div class="video-card">
+                <video src="video5.mp4" controls poster="https://via.placeholder.com/600x338/111/ff6b00?text=Video+2"></video>
+                <div class="info">
+                    <h3>SAMPLE</h3>
+                    <span class="views">📈</span>
+                    <p class="desc">Content idea.</p>
+                </div>
+            </div>
+
+
+    
+        </div>
+
+        <!-- ===== BACK LINK ===== -->
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <!-- ===== FAQ ===== -->
+        <div class="faq-section">
+            <h2>Questions? <span>Answered.</span></h2>
+            <p class="sub">Everything you need to know before working with us.</p>
+
+            <div class="faq-item active">
+                <div class="question">
+                    How fast do you deliver?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="answer">Standard edits are delivered within 48–72 hours. Rush delivery available — just ask!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">
+                    Can I start with just one video?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="answer">Absolutely. No long-term commitment. We work per video or monthly — your choice.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">
+                    What if I don't like the edit?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="answer">We offer 2 free revision rounds per video. We'll keep going until you're happy.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">
+                    Do you use music or instruments?
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="answer">Never. We use 100% music-free sound design — only vocals, natural sounds, and permission-free audio.</div>
+            </div>
+        </div>
+
+        <!-- ===== WHY WE EXIST ===== -->
+        <div class="why-exist">
+            <h2>Why We <span>Exist</span></h2>
+            <p>
+                Because creators deserve edits that actually work — no fluff, no shortcuts. 
+                Just clean, professional videos that help you grow.
+            </p>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            © 2026 Carits — Edits that work.
+        </div>
+
+    </div>
+
+    <!-- ===== FAQ TOGGLE JAVASCRIPT ===== -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    if (i !== this) i.classList.remove('active');
+                });
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
